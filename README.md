@@ -64,11 +64,11 @@ python jingleminer_hashrate_benchmark.py <bitaxe_ip>
 
 Optional parameters:
 - `-v, --voltage`: Initial voltage in mV (default: 1150)
-- `-f, --frequency`: Initial frequency in MHz (default: 500)
+- `-f, --frequency`: Initial frequency in MHz (default: 600)
 
 Example:
 ```bash
-python jingleminer_hashrate_benchmark.py 192.168.2.29 -v 1175 -f 775
+python jingleminer_hashrate_benchmark.py 192.168.2.29 -v 1155 -f 600
 ```
 
 ### Docker Usage (Optional)
@@ -81,27 +81,27 @@ docker run --rm jingleminer_hashrate_benchmark <bitaxe_ip> [options]
 
 Example:
 ```bash
-docker run --rm jingleminer_hashrate_benchmark 192.168.2.26 -v 1200 -f 550
+docker run --rm jingleminer_hashrate_benchmark 192.168.2.26 -v 1100 -f 550
 ```
 
 ## Configuration
 
 The script includes several configurable parameters:
 
-- Maximum chip temperature: 66°C
+- Maximum chip temperature: 68°C
 - Maximum VR temperature: 86°C
 - Maximum allowed voltage: 1400mV
 - Minimum allowed voltage: 1000mV
 - Maximum allowed frequency: 1200MHz
 - Maximum power consumption: 40W
 - Minimum allowed frequency: 400MHz
-- Minimum input voltage: 4800mV
-- Maximum input voltage: 5500mV
-- Benchmark duration: 10 minutes
+- Minimum input voltage: 4700mV
+- Maximum input voltage: 5400mV
+- Benchmark duration: 20 minutes
 - Sample interval: 15 seconds
 - **Minimum required samples: 7** (for valid data processing)
-- Voltage increment: 20mV
-- Frequency increment: 25MHz
+- Voltage increment: 5mV
+- Frequency increment: 10MHz
 
 ## Output
 
@@ -119,7 +119,7 @@ The benchmark results are saved to `bitaxe_benchmark_results_<ip_address>.json`,
 
 ## Safety Features
 
-- Automatic temperature monitoring with safety cutoff (66°C chip temp)
+- Automatic temperature monitoring with safety cutoff (68°C chip temp)
 - Voltage regulator (VR) temperature monitoring with safety cutoff (86°C)
 - Input voltage monitoring with minimum threshold (4800mV) and maximum threshold (5500mV)
 - Power consumption monitoring with safety cutoff (40W)
